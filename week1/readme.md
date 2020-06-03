@@ -9,30 +9,22 @@ Lab1
 - "ls" show all directory/files under current directory
 
 
-- "mkdir 1161" make directory 1161
-- "git clone https://github.com/Design-Computing/CODE1161-2019 course" copy entire file from cloud to local machine
+- "mkdir (name of directory)" make directory 
+- "git clone url" copy entire file from cloud to local machine
 - "git pull"  when file renewed, replace changed file from cloud to local machine
 - "git diff "  display the changes
+   (Q) quit from editor
 - "git add --all"  locate all the file changed compared with cloud
   "git commit -m "comment lines""  outline the reason for update
   "git push"  update the cloud file from local machine
 
-
-
-
-
-
-code (command: open piece of thing) . () – (flag something as a thing)r (reuse)
-
 Test:
-cd ..
-cd course/
-pwd 
+pwd, cd, blablabla, go to course/
+check what is under test
 python3 week1/tests.py
 
 Upload:
-cd ..
-cd me/ 
+pwd, cd, blablabla, go to me/
 git diff 
 (Q)
 git add --all 
