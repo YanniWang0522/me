@@ -30,3 +30,4 @@ git diff
 git add --all 
 git commit -m "lab1"
 git push
+git pull                         Check 'Already up to date'
