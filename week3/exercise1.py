@@ -12,7 +12,15 @@ def loop_ranger(start, stop=None, step=1):
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+
+
+    number_array = []
+
+    while start < stop: 
+        number_array.append(start)
+        start = start + step
+
+    return number_array
 
 
 def lone_ranger(start, stop, step):
@@ -20,8 +28,12 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    number_array = []
 
+    for i in range(start, stop, step):
+        number_array.append(i)
+
+    return number_array
 
 def two_step_ranger(start, stop):
     """Make a range that steps by 2.
@@ -29,7 +41,14 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    number_array = []
+
+    for i in range(start, stop, 2):
+        number_array.append(i)
+
+    return number_array
+
+
 
 
 def stubborn_asker(low, high):
@@ -40,7 +59,15 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+
+
+    i = int(input("Guess a number: "))
+
+    while i <= low or i >= high: 
+        i = int(input("It is out of range, Try another number: "))
+
+    print("u got the number correctly")
+    return i
 
 
 def not_number_rejector(message):
@@ -50,7 +77,15 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+
+    
+    m = "Guess a number:"
+    while True:
+        try:
+            i = int(input(m))
+            return i
+        except Exception:
+            m = "it is not a number"
 
 
 def super_asker(low, high):
@@ -61,7 +96,20 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+
+
+    m = "Guess a number:"
+    while True:
+        try:
+            i = int(input(m))
+
+            if  low < i < high: 
+                return i
+            m = "It is out of range, Try another number:"
+        except Exception:
+
+            m = "it is not a number"
+
 
 
 if __name__ == "__main__":

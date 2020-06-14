@@ -14,14 +14,14 @@ def exampleGuessingGame():
     """
     print("\nWelcome to the guessing game!")
     print("A number between 0 and _ ?")
-    upperBound = input("Enter an upper bound: ")
+    upperBound = int(input("Enter an upper bound: "))
     print("OK then, a number between 0 and {} ?".format(upperBound))
-    upperBound = int(upperBound)
+    # upperBound = int(upperBound)
 
     actualNumber = random.randint(0, upperBound)
 
     guessed = False
-
+    
     while not guessed:
         guessedNumber = int(input("Guess a number: "))
         print("You guessed {},".format(guessedNumber),)
