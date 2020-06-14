@@ -57,9 +57,6 @@ def binary_search(low, high, actual_number):
 
     tries = 0
     while True:
-        
-        print(low)
-        print(high)
 
         if (high - low) == 2:
             break
