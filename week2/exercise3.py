@@ -251,8 +251,8 @@ def loops_7():
 
     column = []
     for i in range(5): 
-        star_start = 4 - i   # 4
-        star_end   = 4 + i   # 4
+        star_start = 4 - i   
+        star_end   = 4 + i 
         row = []
 
         for j in range(9):
