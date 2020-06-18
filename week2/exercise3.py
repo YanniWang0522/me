@@ -89,19 +89,6 @@ def loops_2():
     return column
 
 
-    clumn = [] 
-    i = 0; 
-    row = [] 
-
-
-
-
-
-
-
-
-
-
 def loops_3():
     """Make a rising block of numbers.
 

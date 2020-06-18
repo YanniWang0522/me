@@ -59,6 +59,7 @@ def binary_search(low, high, actual_number):
     while True:
 
         if (high - low) == 2:
+            guess = high - 1
             break
 
         guess = (high + low) // 2

@@ -49,3 +49,19 @@ double-loop:
     . ->  . . . . .... .
     n ->  1 2 3 4 .... n
     
+
+
+Revise
+
+    my_dict = {"taste" : "Delicious"}
+    my_dict["taste"]
+
+    my_list = [1 , 2 , 3 , 4 , 5]
+    my_list[1]
+
+    my_tupel = (1,2,"hello")
+
+    another_list[my_dict, my_list]
+    # get taste from dictionary
+    another_list[0]["taste"]
+
