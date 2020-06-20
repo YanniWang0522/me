@@ -6,6 +6,9 @@ import os
 import requests
 import inspect
 import sys
+import random
+import string
+
 
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
@@ -16,6 +19,9 @@ if LOCAL != CWD:
     print("LOCAL", LOCAL)
     print("CWD", CWD)
 
+def randomString(stringLength):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
 
 def get_some_details():
     """Parse some JSON.
@@ -34,9 +40,10 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+ 
+    return {"lastName": data["results"][0]["name"]["last"], "password": data["results"][0]["login"]["password"], 
+    "postcodePlusID": data["results"][0]["location"]["postcode"] + int(data["results"][0]["id"]["value"])}
 
 
 def wordy_pyramid():
@@ -74,7 +81,24 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+    buff = []
+    start = 3
+    end = 20
+    temp = start
+    flag = 0
+
+    while start <= end + 1:
+        if start == end + 1:
+            flag = 1
+        if flag == 0: 
+            buff.append(randomString(start))
+            start = start + 2
+        else: 
+            buff.append(randomString(end)) 
+            start = temp + 1
+            end = end - 2
+    return buff
+
 
 
 def pokedex(low=1, high=5):
@@ -92,12 +116,28 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
+    the_json = None
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    height = -1
+    weight = -1
+    name = ""
+
+    while low < high:
+        url = template.format(id=low)
+        r = requests.get(url)
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+
+        if the_json != None:
+            if the_json["height"] > height:
+                height = the_json["height"] 
+                weight = the_json["weight"]
+                name = the_json["name"]
+        low += 1
+
+
+
+    return {"name": name, "weight": weight, "height": height}
 
 
 def diarist():
@@ -114,7 +154,21 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    pass
+    fp_R = open("Trispokedovetiles(laser).gcode", "r")
+    data = fp_R.readlines() 
+    count = 0
+    turnoff = "M10 P1"
+    for lines in data:
+        name = ""
+        if len(lines) > 6:
+            for i in range(6):
+                name += lines[i]
+            if name == turnoff:
+                count += 1      
+    fp_W = open("lasers.pew", "w")
+    fp_W.write(str(count))
+
+
 
 
 if __name__ == "__main__":
@@ -130,3 +184,5 @@ if __name__ == "__main__":
             print(e)
     if not os.path.isfile("lasers.pew"):
         print("diarist did not create lasers.pew")
+
+    diarist()
