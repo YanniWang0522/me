@@ -77,8 +77,9 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
     # ask the use to input a number and convert from string to number
+   
     i = int(input("Guess a number: "))
- 
+
     while i <= low or i >= high: 
         i = int(input("It is out of range, Try another number: "))
 
@@ -113,27 +114,41 @@ def super_asker(low, high):
     amount of code.
     """
 
-
     m = "Guess a number:"
+    
     while True:
+
         try:
             i = int(input(m))
-
-            if  low < i < high: 
+            if low < i < high: 
                 return i
-            m = "It is out of range, Try another number:"
-        except Exception:
+            else:
+                m = "It is out of range, Try another number:"
 
+        except Exception:
             m = "it is not a number"
+
+
+    # m = "Guess a number:"
+    # while True:
+    #     try:
+    #         i = int(input(m))
+
+    #         if  low < i < high: 
+    #             return i
+    #         m = "It is out of range, Try another number:"
+
+    #     except Exception:
+    #         m = "it is not a number"
 
 
 
 if __name__ == "__main__":
-    # this section does a quick test on your results and prints them nicely.
-    # It's NOT the official tests, they are in tests.py as usual.
-    # Add to these tests, give them arguments etc. to make sure that your
-    # code is robust to the situations that you'll see in action.
-    # NOTE: because some of these take user input you can't run them from
+    this section does a quick test on your results and prints them nicely.
+    It's NOT the official tests, they are in tests.py as usual.
+    Add to these tests, give them arguments etc. to make sure that your
+    code is robust to the situations that you'll see in action.
+    NOTE: because some of these take user input you can't run them from
 
     print("\nloop_ranger", loop_ranger(1, 10, 2))
     print("\nlone_ranger", lone_ranger(1, 10, 3))

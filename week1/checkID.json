@@ -5,19 +5,19 @@
     ],
     "machine": "x86_64",
     "os_name": "posix",
-    "platform": "Darwin-18.7.0-x86_64-i386-64bit",
+    "platform": "Darwin-19.5.0-x86_64-i386-64bit",
     "processor": "i386",
-    "release": "18.7.0",
+    "release": "19.5.0",
     "system": "Darwin",
     "uname": [
         "Darwin",
         "Yannis-MacBook-Pro.local",
-        "18.7.0",
-        "Darwin Kernel Version 18.7.0: Thu Jan 23 06:52:12 PST 2020; root:xnu-4903.278.25~1/RELEASE_X86_64",
+        "19.5.0",
+        "Darwin Kernel Version 19.5.0: Tue May 26 20:41:44 PDT 2020; root:xnu-6153.121.2~2/RELEASE_X86_64",
         "x86_64",
         "i386"
     ],
-    "version": "Darwin Kernel Version 18.7.0: Thu Jan 23 06:52:12 PST 2020; root:xnu-4903.278.25~1/RELEASE_X86_64",
+    "version": "Darwin Kernel Version 19.5.0: Tue May 26 20:41:44 PDT 2020; root:xnu-6153.121.2~2/RELEASE_X86_64",
     "python_build": [
         "default",
         "Jan  8 2020 13:42:34"

@@ -23,6 +23,7 @@ pwd, cd, blablabla, go to course/
 check what is under test
 python3 week1/tests.py
 python3 week2/tests.py
+python3 week3/tests.py
 
 Upload:
 pwd, cd, blablabla, go to me/

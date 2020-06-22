@@ -203,11 +203,12 @@ def loops_6():
     column = []
     for i in range(10): 
         row = []
+        
         j = 0
-
         while j <= i:
             row.append(str(j))
             j = j + 1
+
         column.append(row)
     return column
 
@@ -233,25 +234,22 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    space = " "
-    star  = "*"
 
     column = []
     for i in range(5): 
-        star_start = 4 - i   
-        star_end   = 4 + i 
         row = []
+        star_start = 4 - i
+        star_end = 4 + i
 
         for j in range(9):
-            if j >= star_start and j <= star_end:
-                row.append(star)
+            if  star_start <= j <= star_end:
+                row.append ("*")
             else:
-                row.append(space)
+                row.append (" ")
 
         column.append(row)
-
+    print(column)
     return column
-
 
 
 
