@@ -1,5 +1,111 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+
+Open data: Australian Road Deaths Database
+
+https://data.gov.au/dataset/ds-dga-5b530fb8-526e-4fbf-b0f6-aa24e84e4277/details?q=crash
+https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database
+
+# Who record the data, when and why? 
+ Reported by the police each month to the State and Territory road safety authorities
+ Published by the Bureau of Infrastructure, Transport and Regional Economics.
+ From 1990 - 2019
+ report ways for different states, die in accidents or accidents
+ counter-factural: 
+ e.g. young man die in motor cycles
+      
  
+
+# Questions
+ What are the risk factors in road deaths in Australia? Are they getting better or worse?
+ Risk Factors:
+ the circumstances of the crash (location, crash type, day of week, time)
+ details regarding the persons killed () age, gender, road user group)
+
+# Overview by year
+    Connected Scatterplot
+    https://www.r-graph-gallery.com/connected-scatterplot.html
+
+# Location
+ # Total by State: Interactive Choropleth Map
+    https://www.r-graph-gallery.com/choropleth-map.html
+    https://www.r-graph-gallery.com/animation.html
+    Total number of road death by states (NSW, ACT, NT, Qld, SA, Vic, Tas, WA)
+    Displayed by the shade of color (yellow - orange - red)
+    Interactive Choropleth Map: Show the total number of road death
+ # Animation by year
+    ? Animation: Show the number of death each year
+ # Total by State and National Road Type: Heat Map
+    https://www.r-graph-gallery.com/heatmap
+    x-axis: State Name
+    y-axis: National Road Type
+    Color Shade: number of deaths
+
+# Crash type: 
+ # Total by Crash type: Donut chart  
+   https://www.r-graph-gallery.com/doughnut-plot.html  
+    Single VS Multiple (Bus Involvement/ Heavy Rigid Truck Involvement/ Articulated Truck Involvement)
+
+# Time
+ # Total by dayweek and time: Heat Map
+    https://www.r-graph-gallery.com/heatmap
+    x-axis: Time 
+    y-axis: Dayweek
+    Color Shade: number of deaths
+
+# Speed Limit
+ # Total by speed limit: horizontal bar chart (animation:racing)
+    x-axis: number of deaths
+    y-axis: speed limit
+
+# Age
+ # Year Total by age group: Stacked Area Chart
+    https://www.r-graph-gallery.com/stacked-area-graph.html
+    Age groups: 
+    Option1: 0-16, 17-25, 26-39, 40-64, 65-74, >75
+    Option2: Child (0-12 years), Adolescence (13-18 years), Young Adult (19-35 years), middle-aged adult(36–50), Senior Adult (50 years and above) 
+
+# Gender
+ # Year Total by age group: Line Chart
+    https://www.r-graph-gallery.com/line-plot.html
+
+# Road User
+ # Total by month and road user: Circular barplot
+    https://www.r-graph-gallery.com/circular-barplot.html
+    x-axis: month
+    y-axis: number of deaths by road user
+ # Year Total by Road User: vertical bar chart (animation)
+    x-axis: road user
+    y-axis: number of deaths
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Revision: 
  Week2 Exercise0
 

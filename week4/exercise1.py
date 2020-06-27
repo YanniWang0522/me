@@ -19,9 +19,13 @@ if LOCAL != CWD:
     print("LOCAL", LOCAL)
     print("CWD", CWD)
 
-def randomString(stringLength):
-    letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(stringLength))
+def randomString(length=None):
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={stringLength}"
+    url = url.format(stringLength=length)
+    r = requests.get(url)
+    if r.status_code is 200:
+        random_word = r.content
+    return random_word
 
 def get_some_details():
     """Parse some JSON.
@@ -92,15 +96,15 @@ def wordy_pyramid():
 
     while row <= end:
         if row < 9:
-            word.append(randomString(number))
+            word.append(randomString(int(number)))
             number = number + 2
             row = row + 1
         elif row == 9:
-            word.append(randomString(number))
+            word.append(randomString(int(number)))
             number = number + 1
             row = row + 1
         elif row > 9:
-            word.append(randomString(number))
+            word.append(randomString(int(number)))
             number = number - 2
             row = row + 1
             
@@ -213,7 +217,7 @@ def diarist():
             if name == turnoff:
                 count = count + 1 
 
-            print(name) 
+            # print(name) 
 
     fp_W = open("lasers.pew", "w")
     fp_W.write(str(count))

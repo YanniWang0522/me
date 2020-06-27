@@ -17,3 +17,5 @@ csv/jason
 https://www.kaggle.com/datasets
 https://data.gov.au/dataset/ds-dga-5b530fb8-526e-4fbf-b0f6-aa24e84e4277/details?q=crash
 https://data.gov.au
+what type of thing? string
+who record the data, when and why?
