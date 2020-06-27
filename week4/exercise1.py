@@ -19,7 +19,7 @@ if LOCAL != CWD:
     print("LOCAL", LOCAL)
     print("CWD", CWD)
 
-def randomString(length=None):
+def randomString(length=8):
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={stringLength}"
     url = url.format(stringLength=length)
     r = requests.get(url)
