@@ -19,6 +19,16 @@ if LOCAL != CWD:
     print("LOCAL", LOCAL)
     print("CWD", CWD)
 
+<<<<<<< HEAD
+=======
+def randomString(length=8):
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={stringLength}"
+    url = url.format(stringLength=length)
+    r = requests.get(url)
+    if r.status_code is 200:
+        random_word = r.content
+    return random_word
+>>>>>>> 98712b9d1facec12c8325e829301405fc9595f39
 
 def get_some_details():
     """Parse some JSON.
@@ -85,24 +95,49 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
 
+    #  1  2  3  4   5   6  7   8   9   10
+    # [3, 5, 7, 9, 11, 13, 15, 17, 19, 20, 18, 16, 14, 12, 10, 8, 6, 4]
+    
+    word = []
+    row = 1
+    number = 3
+    end = 18
 
-    buff = []
-    start = 3
-    end = 20
-    temp = start
-    flag = 0
+    while row <= end:
+        if row < 9:
+            word.append(randomString(int(number)))
+            number = number + 2
+            row = row + 1
+        elif row == 9:
+            word.append(randomString(int(number)))
+            number = number + 1
+            row = row + 1
+        elif row > 9:
+            word.append(randomString(int(number)))
+            number = number - 2
+            row = row + 1
+            
 
-    while start <= end + 1:
-        if start == end + 1:
-            flag = 1
-        if flag == 0: 
-            buff.append(randomString(start))
-            start = start + 2
-        else: 
-            buff.append(randomString(end)) 
-            start = temp + 1
-            end = end - 2
-    return buff
+    print (word)
+    return word
+
+    # buff = []
+    # start = 3
+    # end = 20
+    # temp = start
+    # flag = 0
+
+    # while start <= end + 1:
+    #     if start == end + 1:
+    #         flag = 1
+    #     if flag == 0: 
+    #         buff.append(randomString(start))
+    #         start = start + 2
+    #     else: 
+    #         buff.append(randomString(end)) 
+    #         start = temp + 1
+    #         end = end - 2
+    # return buff
 
 
 
@@ -127,19 +162,28 @@ def pokedex(low=1, high=5):
     weight = -1
     name = ""
 
-    while low < high:
-        url = template.format(id=low)
-        r = requests.get(url)
-        if r.status_code == 200:
-            the_json = json.loads(r.text)
 
-        if the_json != None:
-            if the_json["height"] > height:
+    # r = {status_code:200, txt: {} }
+    while low < high:
+        # set up url for the id value
+        url = template.format(id=low)
+        # get url data
+        r = requests.get(url)
+
+        # status_code returns a number that indicates the status (200 is OK, 404 is Not Found)
+        if r.status_code == 200:
+            # load jason file
+            the_json = json.loads(r.text)
+            
+        # != not equal
+        # jason file
+        # in order to find the maximum
+        if the_json != None and the_json["height"] > height:
+
                 height = the_json["height"] 
                 weight = the_json["weight"]
                 name = the_json["name"]
-        low += 1
-
+        low = low + 1
 
 
     return {"name": name, "weight": weight, "height": height}
@@ -160,19 +204,45 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
     fp_R = open("Trispokedovetiles(laser).gcode", "r")
+
+    # put ecach line in the array
     data = fp_R.readlines() 
+
     count = 0
     turnoff = "M10 P1"
+    
+    # for each string in array
     for lines in data:
+        # start value for string
         name = ""
-        if len(lines) > 6:
-            for i in range(6):
-                name += lines[i]
+        #zhalan
+        if len(lines) >= 6:
+
+            i = 0
+            while i < 6:
+                name = name + lines[i]
+                i = i + 1
+
             if name == turnoff:
-                count += 1      
+                count = count + 1 
+
+            # print(name) 
+
     fp_W = open("lasers.pew", "w")
     fp_W.write(str(count))
 
+
+    # print("xiao feizhu yao zhu dao line[i] shi sm ===========")
+    # lines_t = "xiaofeizhu\n"
+    # for i in range(6):
+    #     name = name + lines_t[i]
+    #     print("{i}..{letter}..{name}".format(i=i,letter=lines_t[i],name=name))
+    # array = ["haoqian", "yanni"]
+    # array = [1, 2, 3, 4, 5]
+
+    # for j in array:
+    #     print(j)
+    # # print(name)
 
 
 

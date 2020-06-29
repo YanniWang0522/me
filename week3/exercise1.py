@@ -77,8 +77,9 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
     # ask the use to input a number and convert from string to number
+   
     i = int(input("Guess a number: "))
- 
+
     while i <= low or i >= high: 
         i = int(input("It is out of range, Try another number: "))
 
@@ -113,18 +114,32 @@ def super_asker(low, high):
     amount of code.
     """
 
-
     m = "Guess a number:"
+    
     while True:
+
         try:
             i = int(input(m))
-
-            if  low < i < high: 
+            if low < i < high: 
                 return i
-            m = "It is out of range, Try another number:"
-        except Exception:
+            else:
+                m = "It is out of range, Try another number:"
 
+        except Exception:
             m = "it is not a number"
+
+
+    # m = "Guess a number:"
+    # while True:
+    #     try:
+    #         i = int(input(m))
+
+    #         if  low < i < high: 
+    #             return i
+    #         m = "It is out of range, Try another number:"
+
+    #     except Exception:
+    #         m = "it is not a number"
 
 
 
