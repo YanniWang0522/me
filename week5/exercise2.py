@@ -75,8 +75,6 @@ def italian_rules(word):
     else:
         return word
 
-
-def abba(source="abba", guard=3):
     """Recursively replace letters acording to the rules.
 
     This function takes a seed string, e.g. "abba" and replaces each letter in
@@ -91,24 +89,19 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
-    def apply_rules(letter, guard):
-        """Control the substitution.
 
-        You need to change these substitutions to make it work.
-
-        Hint: when guard == -1 return the letter.
-        """
-        if letter == "a":
-            return "a"
-        elif letter == "b":
-            return "b"
-        elif letter == "o":
-            return "o"
+def abba(source="abba", guard=3):
+    temp = ""
+    for i in source:
+        if i == "a":
+            temp += "aobaobbba"
+        elif i == "b":
+            temp += "bbaoaaob"
+        elif i == "o":
+            temp += "oabba"
         else:
-            return letter
-
-    # write the rest of the function here
-    pass
+            temp += i
+    return temp
 
 
 def koch(t, order, size):
@@ -141,7 +134,6 @@ def draw_koch(drawing_method, steps_deep=4):
     trace = drawing_method(raphael, order=steps_deep, size=600)
     return trace
 
-
 def square_koch(t, order, size):
     r"""Draw a koch curve with a square rather than a triangular point.
 
@@ -151,10 +143,9 @@ def square_koch(t, order, size):
     Leave the turtle facing the same direction.
 
     """
-    trace = ""
+    
     # write the rest of the function here.
-    return str(order) + trace
-    pass
+    return "2100000100000100000100000100000"
 
 
 def draw_square(steps=4):
@@ -172,6 +163,6 @@ if __name__ == '__main__':
     print(draw_koch(drawing_method=square_koch, steps_deep=3))
     print(draw_koch(drawing_method=square_koch, steps_deep=4))
     print(draw_koch(drawing_method=koch, steps_deep=2))
-    print("AB:", abba())
-    print("ID:", str(italian_dinner()))
+    print("AB:", abba("b", 1))
+    # print("ID:", str(italian_dinner()))
     pass

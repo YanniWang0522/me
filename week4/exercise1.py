@@ -19,9 +19,6 @@ if LOCAL != CWD:
     print("LOCAL", LOCAL)
     print("CWD", CWD)
 
-def randomString(stringLength):
-    letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(stringLength))
 
 def get_some_details():
     """Parse some JSON.
@@ -44,6 +41,12 @@ def get_some_details():
  
     return {"lastName": data["results"][0]["name"]["last"], "password": data["results"][0]["login"]["password"], 
     "postcodePlusID": data["results"][0]["location"]["postcode"] + int(data["results"][0]["id"]["value"])}
+
+
+
+def randomString(stringLength=8):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for _ in range(stringLength))
 
 
 def wordy_pyramid():
@@ -81,6 +84,8 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
+
+
     buff = []
     start = 3
     end = 20
