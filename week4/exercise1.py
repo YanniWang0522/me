@@ -19,8 +19,6 @@ if LOCAL != CWD:
     print("LOCAL", LOCAL)
     print("CWD", CWD)
 
-<<<<<<< HEAD
-=======
 def randomString(length=8):
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={stringLength}"
     url = url.format(stringLength=length)
@@ -28,7 +26,6 @@ def randomString(length=8):
     if r.status_code is 200:
         random_word = r.content
     return random_word
->>>>>>> 98712b9d1facec12c8325e829301405fc9595f39
 
 def get_some_details():
     """Parse some JSON.
