@@ -192,7 +192,6 @@ def make_filler_text_dictionary():
         list_word = [] 
         for _ in range(3):
             list_word.append(get_random_string(i))
-        
         wd[i] = list_word
 
     return wd
@@ -233,10 +232,8 @@ def fast_filler(number_of_words=200):
     it'll convert integer keys to strings.
     If you get this one to work, you are a Very Good Programmer™!
     """
-
-    paragraph = random_filler_text(number_of_words)
-    paragraph = paragraph[0].upper() + paragraph[1:]
-    return paragraph + "."
+    
+    return random_filler_text(number_of_words).capitalize() + "."
 
 
 if __name__ == "__main__":
