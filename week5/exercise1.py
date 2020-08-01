@@ -1,15 +1,11 @@
 # -*- coding: UTF-8 -*-
 """Refactoring.
-
 This exercise contains a complete and working example, but it's very poorly written.
-
 Your job is to go through it and make it as good as you can.
-
 That means making it self-documenting wherever possible, adding comments where
 it isn't. Take repeated code and make it into a function. Also use functions
 to encapsulate concepts. If something is done many times, maybe a map or a loop
 is called for. Etc.
-
 Some functions will have directions as external comments, once you think you
 are on top of it, take these comments out. Others won't have comments and
 you'll need to figure out for yourself what to do.
